@@ -43,4 +43,7 @@ exercism download --exercise=collatz-conjecture --track=dart
 exercism submit /path/to/file [/path/to/file2 ...]
 ```
 
-
+### Tags
+* Loops 
+* Variable 
+* Conditions
