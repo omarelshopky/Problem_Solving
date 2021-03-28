@@ -15,6 +15,7 @@ $ pub run test
 ```
 
 ## Tags
+* Conditions
 * Booleans
 * Integers
 * Logic
