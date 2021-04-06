@@ -45,6 +45,7 @@ To run the tests:
 ```sh
 $ pub run test
 ```
+## [Solution](https://github.com/omarhesham2/Problem_Solving/blob/main/Dart/Scrabble_Score/scrabble-score.dart)
 
 ### Tags
 * Conditions
