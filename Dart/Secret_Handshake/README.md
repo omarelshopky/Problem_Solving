@@ -35,4 +35,9 @@ To run the tests:
 $ pub run test
 ```
 
-## [Solution]()
+## [Solution](https://github.com/omarhesham2/Problem_Solving/blob/main/Dart/Secret_Handshake/Secret_Handshake.dart)
+
+## Tags
+* Arrays and Lists
+* bitwise Operation 
+* Integers
