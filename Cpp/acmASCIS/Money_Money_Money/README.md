@@ -26,4 +26,4 @@ Output one line containing the required answer.
 > 4
 
 ## Category
-* condition
+* Condition
