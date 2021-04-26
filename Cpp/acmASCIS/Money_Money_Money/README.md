@@ -24,3 +24,6 @@ Output one line containing the required answer.
 
 **output**
 > 4
+
+## Category
+* condition
