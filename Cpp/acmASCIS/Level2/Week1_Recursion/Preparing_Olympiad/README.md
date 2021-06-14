@@ -18,6 +18,7 @@ Print the number of ways to choose a suitable problemset for the contest.
 ## Example
 **input**
 > 3 5 6 1
+> 
 > 1 2 3
 
 **output**
@@ -26,6 +27,7 @@ Print the number of ways to choose a suitable problemset for the contest.
 ---
 **input**
 > 4 40 50 10
+> 
 > 10 20 30 25
 
 **output**
@@ -34,6 +36,7 @@ Print the number of ways to choose a suitable problemset for the contest.
 ---
 **input**
 > 5 25 35 10
+> 
 > 10 10 20 10 20
 
 **output**
