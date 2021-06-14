@@ -24,8 +24,11 @@ For each test case, output f(n).
 **input**
 > 4
 > 86 77 15
+> 
 > 93 35 86
+> 
 > 92 49 21
+> 
 > 62 27 90
 
 **output**
