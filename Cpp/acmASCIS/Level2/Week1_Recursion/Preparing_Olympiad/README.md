@@ -40,6 +40,12 @@ Print the number of ways to choose a suitable problemset for the contest.
 > 6
 
 
+### Note
+In the first example two sets are suitable, one consisting of the second and third problem, another one consisting of all three problems.
+
+In the second example, two sets of problems are suitable — the set of problems with difficulties 10 and 30 as well as the set of problems with difficulties 20 and 30.
+
+In the third example any set consisting of one problem of difficulty 10 and one problem of difficulty 20 is suitable.
 
 ## Category
 * Recursion
