@@ -4,18 +4,31 @@ If the sum is not a palindrome (which means, it is not the same number from left
 left), repeat this procedure.
 For example:
 195 Initial number
+
 591
+
 —–
+
 786
+
 687
+
 —–
+
 1473
+
 3741
+
 —–
+
 5214
+
 4125
+
 —–
+
 9339 Resulting palindrome
+
 In this particular case the palindrome ‘9339’ appeared after the 4th addition. This method leads
 to palindromes in a few step for almost all of the integers. But there are interesting exceptions. 196
 is the first number for which no palindrome has been found. It is not proven though, that there is no
