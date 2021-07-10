@@ -1,71 +1,70 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-#define ll long long
-int t, n, x[13], acc[13], summition;
-bool thereIsSum;
-vector<int> num;
-vector<string> result;
+int t, n, x[13];
+bool take[13], thereIs, printed[10000000];
+vector<vector<int>> ans;
+vector<int> temp;
 
-void findSums(int index, int sum, bool taken){
-    if(sum <= t && taken){
-        num.push_back(x[index - 1]);
-    }
-    if(sum == t && taken){
-        int soo  = 0;
-        string ans;
-        for(int i = 0; i < num.size(); i++){
-            soo += num[i];
-        }
-        if(soo == t){
-            sort(num.rbegin(), num.rend());
-            thereIsSum = true;
-            for(int i = 0; i < num.size(); i++){
-                if(i != 0)
-                    ans += '+';
-                ans += to_string(num[i]);
+void sums(int sum, int index){
+    // baseCase
+    if(sum == t)
+    {
+        for (int i = 0; i < n; i++){
+            thereIs = true;
+            if (take[i]){
+                temp.push_back(x[i]);
             }
-            int cnt = 0;
-            for(int i = 0; i < result.size(); i++){
-                if(result[i] == ans){
-                    cnt = -1;
-                }
-            }
-            if(cnt != -1) result.push_back(ans);
         }
-        num.clear();
+        ans.push_back(temp);
+        temp.clear();
+        return;
+    }
+    else if (sum > t || (sum < t && index == n)){
+        return;
     }
 
-
-    for (int i = index; i < n; i++){
-        if(sum + x[i] <= t && summition - acc[i - 1] + sum >= t){
-            findSums(i + 1, sum + x[i], true);
-        }
-        else
-            findSums(i + 1, sum, false);
-    }
+    // Transition
+    take[index] = true;
+    sums(sum+x[index], index+1);
+    take[index] = false;
+    sums(sum, index+1);
 }
-
 
 int main()
 {
-    ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
+    //ios::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     while(true){
-        result.clear();
-        thereIsSum = false;
-        summition  = 0;
+        thereIs = false;
         cin >> t >> n;
         if(n == 0) break;
+
         for(int i = 0; i < n; i++){
             cin >> x[i];
-            summition += x[i];
-            acc[i] = x[i];
-            if(i != 0)acc[i] += acc[i - 1];
+            take[i] = false;
         }
+        sums(0, 0);
+
         cout << "Sums of " << t << ":\n";
-        findSums(0, 0, false);
-        for(int i = 0; i < result.size(); i++)
-            cout << result[i] << '\n';
-        if(!thereIsSum) cout << "NONE\n";
+        if(!thereIs) cout << "NONE\n";
+        memset(printed, false, sizeof printed);
+
+        for(int i = 0; i < ans.size(); i++){
+            bool dis = true;
+            for(int j = 0; j < ans.size(); j++){
+                if(ans[i] == ans[j] && i != j && printed[j] == true)
+                    dis = false;
+            }
+            if(dis){
+                for(int k = 0; k < ans[i].size(); k++){
+                    cout << ans[i][k];
+                    if(k != ans[i].size() - 1)
+                        cout << '+';
+                }
+                cout << '\n';
+                printed[i] = true;
+            }
+        }
+        ans.clear();
     }
 }
